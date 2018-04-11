@@ -3,15 +3,19 @@
 #######################
 # User guide for this file: https://github.com/samrocketman/jervis/wiki/User-Guide
 
-language: java
+language: groovy
 
 #build library
-#gradle doesn't have a retry for assembling dependencies so here's one in bash
+script: ./gradlew clean check Jar
 
-#branches:
-#  only:
-#    - master
-#    - jervis_simple
+#whitelist git branches to build
+branches:
+  only:
+    - master
+    - jervis_simple
 
-#jenkins:
-#  pipeline_jenkinsfile: assets/Jenkinsfile
+jenkins:
+  pipeline_jenkinsfile: assets/Jenkinsfile
+  collect:
+    artifacts: build/libs/*.jar
+    junit: build/test-results/*.xml
