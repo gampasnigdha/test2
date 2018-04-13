@@ -5,7 +5,7 @@
 
 language: groovy
 
-chmod +x gradlew
+script: chmod +x gradlew
 
 #build library
 script: ./gradlew clean check Jar
