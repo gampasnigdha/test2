@@ -18,7 +18,7 @@ branches:
     - jervis_simple
 
 jenkins:
-  pipeline_jenkinsfile: assets/Jenkinsfile
+  pipeline_jenkinsfile: Jenkinsfile
   collect:
     collect: 
       artifacts: build/libs/*.jar
