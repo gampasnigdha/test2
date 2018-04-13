@@ -3,9 +3,10 @@
 #######################
 # User guide for this file: https://github.com/samrocketman/jervis/wiki/User-Guide
 
-language: shell
+language: groovy
 
-script: chmod a+x gradlew
+before_install:
+ - chmod +x gradlew
 
 #build library
 script: ./gradlew clean check Jar
